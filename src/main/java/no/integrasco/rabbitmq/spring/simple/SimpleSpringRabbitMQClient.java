@@ -12,9 +12,9 @@ public class SimpleSpringRabbitMQClient {
                 "classpath:/rabbit-context.xml");
         AmqpTemplate template = context.getBean(AmqpTemplate.class);
 
-        template.convertAndSend("this is a message");
+        template.convertAndSend("simple.queue", "this is a message");
 
-        String receivedMessage = (String) template.receiveAndConvert("test.queue");
+        String receivedMessage = (String) template.receiveAndConvert("simple.queue");
         System.out.println(receivedMessage);
 
     }

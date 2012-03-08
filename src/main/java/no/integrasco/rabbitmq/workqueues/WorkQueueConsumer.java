@@ -38,6 +38,7 @@ public class WorkQueueConsumer {
 
         Map<String, Object> rabbitMqProperties = new HashMap<String, Object>();
 
+        // mirroring to all brokers in the cluster
         final String MIRROR_MESSAGE_POLICY = "x-ha-policy";
         final String APPLY_TO_ALL_QUEUES = "all";
         rabbitMqProperties.put(MIRROR_MESSAGE_POLICY, APPLY_TO_ALL_QUEUES);

@@ -89,7 +89,6 @@ public class WorkQueuePublisher {
             }
         };
 
-        // Enables publisher acknowledgements on this channel
         channel.addConfirmListener(confirmListener);
 
         long deliveryTag = channel.getNextPublishSeqNo();
